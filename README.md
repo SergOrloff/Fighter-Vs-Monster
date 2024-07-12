@@ -27,23 +27,26 @@
 ```python
 from abc import ABC, abstractmethod
 
+
 # Шаг 1: Создаём абстрактный класс Weapon
 class Weapon(ABC):
     @abstractmethod
     def attack(self):
         pass
 
-# Шаг 2: Реализуем конкретные типы оружия
 
+# Шаг 2: Реализуем конкретные типы оружия
 class Sword(Weapon):
     def attack(self):
         return "удар мечом"
+
 
 class Bow(Weapon):
     def attack(self):
         return "выстрел из лука"
 
 # Шаг 3: Модифицируем класс Fighter
+
 
 class Fighter:
     def __init__(self, name):
@@ -61,6 +64,7 @@ class Fighter:
         else:
             print(f"{self.name} не имеет оружия для атаки.")
 
+
 class Monster:
     def __init__(self, name):
         self.name = name
@@ -68,13 +72,15 @@ class Monster:
     def defeat(self):
         print(f"Монстр {self.name} побеждён!")
 
-# Создаём экземпляры бойцов и монстров
+
+# # Шаг 4: Реализация боя
+# Создаём экземпляры бойца Добрыню Никитича и монстра Змея Горыныча
 fighter1 = Fighter("Добрыня Никитич")
 fighter2 = Fighter("Илья Муромец")
 monster1 = Monster("'Змей Горыныч'")
 monster2 = Monster("'Огненный Дракон'")
 
-# Выбираем меч и атакуем монстров
+# Выбираем меч и атакуем Змея Горыныча
 sword = Sword()
 fighter1.changeWeapon(sword)
 print(f"\n{fighter1.name} выбирает меч.")
@@ -84,7 +90,8 @@ fighter2.changeWeapon(sword)
 print(f"\n{fighter2.name} выбирает меч.")
 fighter2.attack(monster1)
 
-# Выбираем лук и атакуем монстров
+
+# Выбираем лук и атакуем Огненного Дракона
 bow = Bow()
 fighter1.changeWeapon(bow)
 print(f"\n{fighter1.name} выбирает лук.")
@@ -94,7 +101,8 @@ fighter2.changeWeapon(bow)
 print(f"\n{fighter2.name} выбирает лук.")
 fighter2.attack(monster2)
 
-# Выбираем меч и атакуем теперь другого монстра
+# Выбираем меч и атакуем теперь Огненного Дракона
+sword = Sword()
 fighter1.changeWeapon(sword)
 print(f"\n{fighter1.name} выбирает меч.")
 fighter1.attack(monster2)
@@ -103,7 +111,8 @@ fighter2.changeWeapon(sword)
 print(f"\n{fighter2.name} выбирает меч.")
 fighter2.attack(monster2)
 
-# Выбираем лук и атакуем теперь другого монстра
+# Выбираем лук и атакуем теперь Огненного Дракона
+bow = Bow()
 fighter1.changeWeapon(bow)
 print(f"\n{fighter1.name} выбирает лук.")
 fighter1.attack(monster1)
@@ -111,8 +120,8 @@ fighter1.attack(monster1)
 fighter2.changeWeapon(bow)
 print(f"\n{fighter2.name} выбирает лук.")
 fighter2.attack(monster1)
-```
 
+```
 2. Запустите программу:
     ```sh
     python bd04.py

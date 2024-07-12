@@ -1,22 +1,25 @@
 from abc import ABC, abstractmethod
 
+
 # Шаг 1: Создаём абстрактный класс Weapon
 class Weapon(ABC):
     @abstractmethod
     def attack(self):
         pass
 
-# Шаг 2: Реализуем конкретные типы оружия
 
+# Шаг 2: Реализуем конкретные типы оружия
 class Sword(Weapon):
     def attack(self):
         return "удар мечом"
+
 
 class Bow(Weapon):
     def attack(self):
         return "выстрел из лука"
 
 # Шаг 3: Модифицируем класс Fighter
+
 
 class Fighter:
     def __init__(self, name):
@@ -34,6 +37,7 @@ class Fighter:
         else:
             print(f"{self.name} не имеет оружия для атаки.")
 
+
 class Monster:
     def __init__(self, name):
         self.name = name
@@ -41,8 +45,8 @@ class Monster:
     def defeat(self):
         print(f"Монстр {self.name} побеждён!")
 
-# # Шаг 4: Реализация боя
 
+# # Шаг 4: Реализация боя
 # Создаём экземпляры бойца Добрыню Никитича и монстра Змея Горыныча
 fighter1 = Fighter("Добрыня Никитич")
 fighter2 = Fighter("Илья Муромец")
